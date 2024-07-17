@@ -1,4 +1,4 @@
-# Diright Healthcare Diagnotic Website
+# Diright Healthcare Diagnostic Website
 # Overview
 Diright is a healthcare diagnostic website designed to assist doctors in diagnosing patient symptoms efficiently. The website offers an intuitive user interface and leverages advanced backend functionality to provide accurate diagnostic results.
 
