@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}DiRight{% endblock %}</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+    
+    <!-- Preconnect for fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin=""/>
+    <link
+        rel="stylesheet"
+        as="style"
+        onload="this.rel='stylesheet'"
+        href="https://fonts.googleapis.com/css2?display=swap&amp;family=Be+Vietnam+Pro:wght@400;500;700;900&amp;family=Noto+Sans:wght@400;500;700;900"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- Custom Styles (if needed) -->
+    {% block custom_styles %}{% endblock %}
+</head>
+<body class="bg-[#181411] text-white font-sans">
+    <header class="flex items-center justify-between border-b border-[#382f29] px-10 py-3">
+        <div class="flex items-center gap-4">
+            <div class="size-4">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor"></path>
+                </svg>
+            </div>
+            <h2 class="text-lg font-bold tracking-tight">DiRight</h2>
+        </div>
+        <nav class="flex gap-8">
+            <a href="#" class="text-sm font-medium">Solutions</a>
+            <a href="#" class="text-sm font-medium">Pricing</a>
+            <a href="#" class="text-sm font-medium">For Developers</a>
+            <a href="#" class="text-sm font-medium">Resources</a>
+            <a href="{{ url_for('login') }}" class="flex items-center h-10 px-4 rounded-full bg-[#382f29] text-sm font-bold">Login</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        {% block content %}
+        <!-- Page-specific content goes here -->
+        {% endblock %}
+    </main>
+
+    <footer class="bg-[#26201c] text-[#b8a99d] py-4 text-center">
+        <p>© 2024 DiRight. All rights reserved.</p>
+    </footer>
+
+    <!-- Custom Scripts (if needed) -->
+    {% block custom_scripts %}{% endblock %}
+</body>
+</html>
