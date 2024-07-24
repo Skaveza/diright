@@ -4,10 +4,9 @@ from .models import PatientDocument, User
 from . import db
 import pandas as pd
 from .patient_utils import create_new_patient
-views = Blueprint('views', __name__)
-
-# Load the machine learning model
 from .ml_module import predict_diagnosis
+
+views = Blueprint('views', __name__)
 
 @views.route('/')
 @login_required
@@ -41,23 +40,33 @@ def patient(patient_id):
             return redirect(url_for('views.home'))
     return redirect(url_for('views.home'))
 
-@views.route('/update_document', methods=['POST'])
+@views.route('/predict', methods=['GET', 'POST'])
 @login_required
-def update_document():
+def predict():
     if current_user.role == 'doctor':
-        patient_id = request.form.get('patient_id')
-        symptoms = request.form.get('symptoms')
-        diagnosis = request.form.get('diagnosis')
-
-        document = PatientDocument.query.filter_by(patient_id=patient_id).first()
-        if document:
-            document.symptoms = symptoms
-            document.diagnosis = diagnosis
-            db.session.commit()
-            flash('Document updated successfully', 'success')
-        else:
-            flash('No documents found for this patient ID', 'error')
-    
+        if request.method == 'POST':
+            patient_id = request.form.get('patient_id')
+            symptoms = [
+                request.form.get('symptom1'),
+                request.form.get('symptom2'),
+                request.form.get('symptom3')
+            ]
+            
+            patient = PatientDocument.query.filter_by(patient_id=patient_id).first()
+            if patient:
+                medical_history = patient.medical_history
+                diagnosis = predict_diagnosis(symptoms, medical_history)
+                
+                # Update patient document
+                patient.symptoms = ", ".join(symptoms)
+                patient.diagnosis = diagnosis
+                db.session.commit()
+                
+                flash('Patient document updated with new symptoms and diagnosis', 'success')
+                return render_template('result.html', prediction=diagnosis, patient=patient)
+            else:
+                flash('Patient not found', 'error')
+        return render_template('predict.html')
     return redirect(url_for('views.home'))
 
 @views.route('/manage_users', methods=['GET', 'POST'])
@@ -66,7 +75,6 @@ def manage_users():
     if current_user.role == 'admin':
         users = User.query.all()
         return render_template('manage_users.html', users=users)
-    
     return redirect(url_for('views.home'))
 
 @views.route('/update_user', methods=['POST'])
@@ -83,22 +91,29 @@ def update_user():
             flash('User updated successfully', 'success')
         else:
             flash('User not found', 'error')
-    
+
     return redirect(url_for('views.manage_users'))
 
-@views.route('/predict', methods=['GET', 'POST'])
+@views.route('/update_database', methods=['GET', 'POST'])
 @login_required
-def predict():
-    if current_user.role == 'doctor':
+def update_database():
+    if current_user.role == 'admin':
         if request.method == 'POST':
-            symptoms = [
-                request.form.get('symptom1'),
-                request.form.get('symptom2'),
-                request.form.get('symptom3')
-            ]
+            # Here you would implement the logic to update your database
+            # This is just a placeholder - adjust according to your needs
+            patient_id = request.form.get('patient_id')
             medical_history = request.form.get('medical_history')
-            prediction = predict_diagnosis(symptoms, medical_history)
-            return render_template('result.html', prediction=prediction)
-    return render_template('predict.html')
 
+            patient = PatientDocument.query.filter_by(patient_id=patient_id).first()
+            if patient:
+                patient.medical_history = medical_history
+                db.session.commit()
+                flash('Patient medical history updated successfully', 'success')
+            else:
+                new_patient = PatientDocument(patient_id=patient_id, medical_history=medical_history)
+                db.session.add(new_patient)
+                db.session.commit()
+                flash('New patient added to database', 'success')
 
+        return render_template('update_database.html')
+    return redirect(url_for('views.home'))
