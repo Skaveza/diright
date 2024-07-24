@@ -1,20 +1,41 @@
 {% extends "base.html" %}
 
+{% block title %}Predict Diagnosis{% endblock %}
+
 {% block content %}
-<h1>Predict Diagnosis</h1>
-<form method="POST">
-    <label for="patient_id">Patient ID:</label>
-    <input type="text" id="patient_id" name="patient_id" required><br>
-
-    <label for="symptom1">Symptom 1:</label>
-    <input type="text" id="symptom1" name="symptom1" required><br>
-
-    <label for="symptom2">Symptom 2:</label>
-    <input type="text" id="symptom2" name="symptom2" required><br>
-
-    <label for="symptom3">Symptom 3:</label>
-    <input type="text" id="symptom3" name="symptom3" required><br>
-
-    <input type="submit" value="Predict">
-</form>
+<div class="flex items-center justify-center min-h-screen bg-[#181411]">
+    <div class="w-full max-w-md bg-[#26201c] p-6 rounded-lg shadow-lg">
+        <h1 class="text-3xl font-bold text-white mb-6 text-center">Predict Diagnosis</h1>
+        <form method="POST" class="space-y-4">
+            <div>
+                <label for="patient_id" class="block text-base font-medium text-white mb-2">Patient ID:</label>
+                <input type="text" id="patient_id" name="patient_id" required 
+                    class="w-full p-3 rounded-lg bg-[#382f29] border border-[#b8a99d] text-white placeholder-[#b8a99d] focus:outline-none focus:ring-2 focus:ring-[#e67a28]" 
+                    placeholder="Enter patient ID">
+            </div>
+            <div>
+                <label for="symptom1" class="block text-base font-medium text-white mb-2">Symptom 1:</label>
+                <input type="text" id="symptom1" name="symptom1" required 
+                    class="w-full p-3 rounded-lg bg-[#382f29] border border-[#b8a99d] text-white placeholder-[#b8a99d] focus:outline-none focus:ring-2 focus:ring-[#e67a28]" 
+                    placeholder="Enter symptom 1">
+            </div>
+            <div>
+                <label for="symptom2" class="block text-base font-medium text-white mb-2">Symptom 2:</label>
+                <input type="text" id="symptom2" name="symptom2" required 
+                    class="w-full p-3 rounded-lg bg-[#382f29] border border-[#b8a99d] text-white placeholder-[#b8a99d] focus:outline-none focus:ring-2 focus:ring-[#e67a28]" 
+                    placeholder="Enter symptom 2">
+            </div>
+            <div>
+                <label for="symptom3" class="block text-base font-medium text-white mb-2">Symptom 3:</label>
+                <input type="text" id="symptom3" name="symptom3" required 
+                    class="w-full p-3 rounded-lg bg-[#382f29] border border-[#b8a99d] text-white placeholder-[#b8a99d] focus:outline-none focus:ring-2 focus:ring-[#e67a28]" 
+                    placeholder="Enter symptom 3">
+            </div>
+            <div class="flex justify-center">
+                <input type="submit" value="Predict" 
+                    class="w-full py-3 px-6 rounded-lg bg-[#e67a28] text-white font-bold cursor-pointer hover:bg-[#d55a1a] transition-colors duration-300">
+            </div>
+        </form>
+    </div>
+</div>
 {% endblock %}
