@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Update Database</h1>
+<form method="POST">
+    <label for="patient_id">Patient ID:</label>
+    <input type="text" id="patient_id" name="patient_id" required><br>
+
+    <label for="medical_history">Medical History:</label>
+    <textarea id="medical_history" name="medical_history" required></textarea><br>
+
+    <input type="submit" value="Update">
+</form>
+{% endblock %}
