@@ -34,7 +34,7 @@ def patient(patient_id):
     if current_user.role == 'doctor':
         document = PatientDocument.query.filter_by(patient_id=patient_id).first()
         if document:
-            return render_template('patient_document.html', document=document)
+            return render_template('doctor_home.html', document=document)
         else:
             flash('No documents found for this patient ID', 'error')
             return redirect(url_for('views.home'))
@@ -99,8 +99,7 @@ def update_user():
 def update_database():
     if current_user.role == 'admin':
         if request.method == 'POST':
-            # Here you would implement the logic to update your database
-            # This is just a placeholder - adjust according to your needs
+            
             patient_id = request.form.get('patient_id')
             medical_history = request.form.get('medical_history')
 
