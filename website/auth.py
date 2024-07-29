@@ -6,30 +6,6 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 auth = Blueprint('auth', __name__)
 
-@auth.route('/login', methods=['GET', 'POST'])
-def login():
-    if current_user.is_authenticated:
-        return redirect(url_for('views.home'))
-
-    if request.method == 'POST':
-        email = request.form.get('email')
-        password = request.form.get('password')
-        
-        user = User.query.filter_by(email=email).first()
-        if user and check_password_hash(user.password, password):
-            login_user(user, remember=True)
-            flash(f'Logged in successfully as {user.role}', 'success')
-            if user.role == 'doctor':
-                return redirect(url_for('views.doctor_dashboard'))
-            elif user.role == 'admin':
-                return redirect(url_for('views.admin_dashboard'))
-            else:
-                return redirect(url_for('views.home'))
-        else:
-            flash('Login unsuccessful. Check email and password.', 'error')
-    
-    return render_template('login.html')
-
 @auth.route('/signup', methods=['GET', 'POST'])
 def signup():
     if current_user.is_authenticated:
@@ -56,11 +32,35 @@ def signup():
             login_user(new_user, remember=True)
             flash(f'Account created successfully as {role}!', 'success')
             if role == 'doctor':
-                return redirect(url_for('views.doctor_dashboard'))
+                return redirect(url_for('views.doctor_home.html'))
             elif role == 'admin':
-                return redirect(url_for('views.admin_dashboard'))
+                return redirect(url_for('views.admin_home.html'))
     
     return render_template('signup.html')
+
+@auth.route('/login', methods=['GET', 'POST'])
+def login():
+    if current_user.is_authenticated:
+        return redirect(url_for('views.home'))
+
+    if request.method == 'POST':
+        email = request.form.get('email')
+        password = request.form.get('password')
+        
+        user = User.query.filter_by(email=email).first()
+        if user and check_password_hash(user.password, password):
+            login_user(user, remember=True)
+            flash(f'Logged in successfully as {user.role}', 'success')
+            if user.role == 'doctor':
+                return redirect(url_for('views.doctor_home.html'))
+            elif user.role == 'admin':
+                return redirect(url_for('views.admin_home.html'))
+            else:
+                return redirect(url_for('views.home'))
+        else:
+            flash('Login unsuccessful. Check email and password.', 'error')
+    
+    return render_template('login.html')
 
 @auth.route('/logout')
 @login_required
