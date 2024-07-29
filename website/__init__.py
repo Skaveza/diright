@@ -1,6 +1,6 @@
-from flask import Flask
+from flask import Flask, render_template, url_for, flash
 from flask_sqlalchemy import SQLAlchemy
-from flask_login import LoginManager
+from flask_login import LoginManager, current_user
 from os import path
 
 db = SQLAlchemy()
@@ -13,8 +13,8 @@ def create_database(app):
 def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'hufidfgfjfjf bhdjufjsdfjdbf'
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'  # Add this line
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # Add this line
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db' 
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  
 
     db.init_app(app)
     login_manager.init_app(app)
