@@ -26,7 +26,8 @@ def signup():
         elif role not in ['doctor', 'admin']:
             flash('Invalid role selected.', 'error')
         else:
-            new_user = User(email=email, username=username, password=generate_password_hash(password, method='sha256'), role=role)
+            hashed_password = generate_password_hash(password, method='pbkdf2:sha256')
+            new_user = User(email=email, username=username, password=hashed_password, role=role)
             db.session.add(new_user)
             db.session.commit()
             login_user(new_user, remember=True)
