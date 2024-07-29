@@ -1,4 +1,5 @@
 import pandas as pd
+import os
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
@@ -11,6 +12,7 @@ from sklearn.model_selection import train_test_split
 # ...
 
 # Load the data
+data_path = os.path.join(os.path.dirname(__file__), 'medical_data.csv')
 data = pd.read_csv('medical_data.csv')
 
 # Prepare the features (X) and target (y)

@@ -11,10 +11,15 @@ views = Blueprint('views', __name__)
 @views.route('/')
 @login_required
 def home():
+      print(f'Current user: {current_user}')
+      print(f'Current user role: {current_user.role}')
+    
+def home():
     if current_user.role == 'doctor':
         return redirect(url_for('views.doctor_home'))
     elif current_user.role == 'admin':
         return redirect(url_for('views.admin_home'))
+    
     return render_template('home.html')
 
 @views.route('/doctor', methods=['GET', 'POST'])

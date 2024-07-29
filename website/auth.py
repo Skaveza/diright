@@ -28,14 +28,16 @@ def signup():
         else:
             hashed_password = generate_password_hash(password, method='pbkdf2:sha256')
             new_user = User(email=email, username=username, password=hashed_password, role=role)
+            
             db.session.add(new_user)
             db.session.commit()
+            
             login_user(new_user, remember=True)
             flash(f'Account created successfully as {role}!', 'success')
             if role == 'doctor':
-                return redirect(url_for('views.doctor_home.html'))
+                return redirect(url_for('views.doctor_home'))
             elif role == 'admin':
-                return redirect(url_for('views.admin_home.html'))
+                return redirect(url_for('views.admin_home'))
     
     return render_template('signup.html')
 
@@ -53,9 +55,9 @@ def login():
             login_user(user, remember=True)
             flash(f'Logged in successfully as {user.role}', 'success')
             if user.role == 'doctor':
-                return redirect(url_for('views.doctor_home.html'))
+                return redirect(url_for('views.doctor_home'))
             elif user.role == 'admin':
-                return redirect(url_for('views.admin_home.html'))
+                return redirect(url_for('views.admin_home'))
             else:
                 return redirect(url_for('views.home'))
         else:
