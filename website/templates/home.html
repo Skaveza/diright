@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Home - DiRight{% endblock %}
+{% block title %}Home - Welcome to DiRight- Diagnostics Done Right{% endblock %}
 
 {% block content %}
 <form method="POST"></form>
@@ -54,12 +54,14 @@
                   <button
                     class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#e67a28] text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]"
                   >
+                  <a href="{{ url_for('auth.signup') }}" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#e67a28] text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]">
                     <span class="truncate">Sign up</span>
+                  </a>
                   </button>
                 </div>
               </div>
             </div>
-            <div class="flex flex-col gap-10 px-4 py-10 @container">
+            <div id="about" class="flex flex-col gap-10 px-4 py-10 @container">
               <div class="flex flex-col gap-4">
                 <h1
                   class="text-white tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]"
@@ -92,6 +94,8 @@
                     <p class="text-[#b8a99d] text-sm font-normal leading-normal">Use AI to analyze medical images and get an accurate diagnosis</p>
                   </div>
                 </div>
+              </div>
+            </div>
                 <div class="flex flex-col gap-3 pb-3">
                   <div
                     class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"

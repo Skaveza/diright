@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}DiRight{% endblock %}</title>
+    <title>{% block title %}Welcome to DiRight{% endblock %}</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
     
     <!-- Preconnect for fonts -->
@@ -29,11 +29,11 @@
                     <path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor"></path>
                 </svg>
             </div>
-            <h2 class="text-lg font-bold tracking-tight">DiRight</h2>
+            <h2 class="text-lg font-bold tracking-tight">Welcome to DiRight</h2>
         </div>
         <nav class="flex gap-8">
             <a href="{{ url_for('views.home') }}" class="text-sm font-medium">Home</a>
-            <a href="#" class="text-sm font-medium">About</a>
+            <a href="#about" class="your-button-class">About</a>
             <a href="#" class="text-sm font-medium">Contact us</a>
             {% if current_user.is_authenticated %}
                 <a href="{{ url_for('auth.logout') }}" class="flex items-center h-10 px-4 rounded-full bg-[#382f29] text-sm font-bold">Logout</a>
