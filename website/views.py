@@ -8,7 +8,7 @@ from .ml_module import predict_diagnosis
 
 views = Blueprint('views', __name__)
 
-@views.route('/')
+@views.route('/home')
 def home():
     if current_user.is_authenticated:
         if current_user.role == 'doctor':
