@@ -1,49 +1,25 @@
 {% extends "base.html" %}
 
-{% block title %}Home - DiRight{% endblock %}
+{% block title %}Admin Dashboard - DiRight{% endblock %}
 
 {% block content %}
-<form method="POST"></form>
-<html>
-  <head>
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
-    <link
-      rel="stylesheet"
-      as="style"
-      onload="this.rel='stylesheet'"
-      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Be+Vietnam+Pro%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
-    />
-    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
-
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  </head>
-  <body>
-    <div
-      class="relative flex size-full min-h-screen flex-col bg-[#2d1d10] dark group/design-root overflow-x-hidden"
-      style='font-family: "Be Vietnam Pro", "Noto Sans", sans-serif;'
-    >
-        <div class="px-40 flex flex-1 justify-center py-5">
-          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-            <div class="flex flex-wrap justify-between gap-3 p-4"><p class="text-white text-4xl font-black leading-tight tracking-[-0.033em] min-w-72">Admin Dashboard</p></div>
-            <div class="flex justify-center">
-              <div class="flex flex-1 gap-3 flex-wrap px-4 py-3 max-w-[480px] justify-center">
-                <button
-                  class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-5 bg-[#e67a28] text-white text-base font-bold leading-normal tracking-[0.015em] grow"
-                >
-                  <span class="truncate">Update Medical Data</span>
-                </button>
-                <button
-                  class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-5 bg-[#57371e] text-white text-base font-bold leading-normal tracking-[0.015em] grow"
-                >
-                  <span class="truncate">Manage Users</span>
-                </button>
-              </div>
+<div class="relative flex size-full min-h-screen flex-col bg-[#2d1d10] dark group/design-root overflow-x-hidden" style='font-family: "Be Vietnam Pro", "Noto Sans", sans-serif;'>
+    <div class="px-40 flex flex-1 justify-center py-5">
+        <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="flex flex-wrap justify-between gap-3 p-4">
+                <p class="text-white text-4xl font-black leading-tight tracking-[-0.033em] min-w-72">Admin Dashboard</p>
             </div>
-          </div>
+            <div class="flex justify-center">
+                <div class="flex flex-1 gap-3 flex-wrap px-4 py-3 max-w-[480px] justify-center">
+                    <a href="{{ url_for('views.update_database') }}" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-5 bg-[#e67a28] text-white text-base font-bold leading-normal tracking-[0.015em] grow">
+                        <span class="truncate">Update Medical Data</span>
+                    </a>
+                    <a href="{{ url_for('views.manage_users') }}" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-5 bg-[#57371e] text-white text-base font-bold leading-normal tracking-[0.015em] grow">
+                        <span class="truncate">Manage Users</span>
+                    </a>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </body>
-</html>
-
+</div>
 {% endblock %}

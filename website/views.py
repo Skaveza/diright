@@ -68,15 +68,20 @@ def manage_users():
 @login_required
 def update_user():
     if current_user.role == 'admin':
-        user_id = request.form.get('user_id')
-        role = request.form.get('role')
-        user = User.query.get(user_id)
-        if user:
-            user.role = role
-            db.session.commit()
-            flash('User updated successfully', 'success')
-        else:
-            flash('User not found', 'error')
+        # Iterate through the submitted data
+        for key in request.form.keys():
+            if key.startswith('role_'):
+                email = key.split('_')[1]
+                role = request.form.get(key)
+                
+                user = User.query.filter_by(email=email).first()
+                if user:
+                    user.role = role
+                    db.session.commit()
+                    flash(f'User {user.username} ({user.email}) updated successfully', 'success')
+                else:
+                    flash(f'User with email {email} not found', 'error')
+    
     return redirect(url_for('views.manage_users'))
 
 @views.route('/update_database', methods=['GET', 'POST'])

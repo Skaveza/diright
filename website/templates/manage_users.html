@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Manage Users{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="text-xl font-bold mb-4">Manage Users</h1>
+    <form method="POST" action="{{ url_for('views.update_user') }}">
+        <table class="min-w-full bg-white border border-gray-300">
+            <thead>
+                <tr>
+                    <th class="py-2 px-4 border-b">Username</th>
+                    <th class="py-2 px-4 border-b">Email</th>
+                    <th class="py-2 px-4 border-b">Role</th>
+                    <th class="py-2 px-4 border-b">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td class="py-2 px-4 border-b">{{ user.username }}</td>
+                    <td class="py-2 px-4 border-b">{{ user.email }}</td>
+                    <td class="py-2 px-4 border-b">
+                        <select name="role_{{ user.email }}" class="form-select">
+                            <option value="admin" {% if user.role == 'admin' %}selected{% endif %}>Admin</option>
+                            <option value="doctor" {% if user.role == 'doctor' %}selected{% endif %}>Doctor</option>
+                            <option value="patient" {% if user.role == 'patient' %}selected{% endif %}>Patient</option>
+                        </select>
+                    </td>
+                    <td class="py-2 px-4 border-b">
+                        <button type="submit" name="update_user" value="{{ user.email }}" class="btn btn-primary">Update</button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </form>
+</div>
+{% endblock %}
