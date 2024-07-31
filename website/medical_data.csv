@@ -1,205 +1,127 @@
 symptom1,symptom2,symptom3,medical_history,diagnosis
-
-Fever,Cough,Fatigue,None,Flu
-
-Headache,Nausea,Dizziness,Migraines,Migraine
-
-Chest Pain,Shortness of Breath,Arm Pain,Hypertension,Heart Attack
-
-Itchy Eyes,Sneezing,Runny Nose,Allergies,Hay Fever
-
-Abdominal Pain,Bloating,Diarrhea,None,Food Poisoning
-
-Sore Throat,Fever,Body Aches,None,Common Cold
-
-Rash,Fever,Joint Pain,None,Measles
-
-Frequent Urination,Excessive Thirst,Weight Loss,Obesity,Diabetes
-
-Wheezing,Cough,Shortness of Breath,Asthma,Asthma Attack
-
-Fever,Stiff Neck,Confusion,None,Meningitis
-
-Runny Nose,Congestion,Facial Pain,Sinus Infection,Sinusitis
-
-Fever,Vomiting,Abdominal Cramps,None,Gastroenteritis
-
-Fatigue,Muscle Aches,Loss of Appetite,Depression,Depression
-
-Cough,Chest Tightness,Shortness of Breath,Smoking,Chronic Obstructive Pulmonary Disease
-
-Fever,Swollen Glands,Sore Throat,Recent Strep Exposure,Strep Throat
-
-Fever,White Spots on Tonsils,Difficulty Swallowing,None,Tonsillitis
-
-Burning Urination,Urgency to Urinate,Blood in Urine,Sexual Activity,Urinary Tract Infection
-
-Fatigue,Rash,Muscle Aches,Recent Tick Bite,Lyme Disease
-
-Fever,Confusion,Seizure,Head Injury,Concussion
-
-Nausea,Vomiting,Diarrhea,Travel History,Traveler's Diarrhea
-
-Abdominal Pain,Diarrhea,Weight Loss,Family History of IBS,Inflammatory Bowel Disease
-
-High Blood Pressure,Headache,Vision Changes,Pregnant,Pre-Eclampsia
-
-Nausea,Vomiting,Fatigue,Missed Period,Pregnancy
-
-Loss of Taste/Smell,Fever,Cough,Recent Travel,COVID-19
-
-Muscle Aches,Fever,Chills,Travel to Malaria Prone Area,Malaria
-
-Diarrhea,High Fever,Abdominal Cramps,Contaminated Water,Typhoid Fever
-
-Fever,Cough,Fatigue,Recent Exposure to Sick Child,Common Cold
-
-Headache,Nausea,Dizziness,History of Migraines,Migraine
-
-Chest Pain,Shortness of Breath,Arm Pain,High Blood Pressure,Heart Attack
-
-Itchy Eyes,Sneezing,Runny Nose,Allergies to Pollen,Hay Fever
-
-Abdominal Pain,Bloating,Diarrhea,Recent Antibiotic Use,Gastroenteritis
-
-Sore Throat,Fever,Body Aches,None,Common Cold
-
-Rash,Fever,Joint Pain,Recent Travel to Asia,Measles
-
-Frequent Urination,Excessive Thirst,Weight Loss,Family History of Diabetes,Diabetes
-
-Wheezing,Cough,Shortness of Breath,History of Asthma,Asthma Attack
-
-Fever,Stiff Neck,Confusion,None,Meningitis
-
-Runny Nose,Congestion,Facial Pain,Recent Sinus Infection,Sinusitis
-
-Fever,Vomiting,Abdominal Cramps,Lactose Intolerance,Gastroenteritis
-
-Fatigue,Muscle Aches,Loss of Appetite,Stressful Life Events,Depression
-
-Cough,Chest Tightness,Shortness of Breath,Smoking for 20 Years,Chronic Obstructive Pulmonary Disease (COPD)
-
-Fever,Swollen Glands,Sore Throat,Recent Strep Throat Exposure,Strep Throat
-
-Fever,White Spots on Tonsils,Difficulty Swallowing,None,Tonsillitis
-
-Burning Urination,Urgency to Urinate,Blood in Urine,Recent Urinary Tract Infection (UTI),UTI
-
-Fatigue,Rash,Muscle Aches,Recent Camping Trip in Wooded Area,Lyme Disease
-
-Headache,Confusion,Seizure,Head Injury from Fall,Concussion
-
-Nausea,Vomiting,Diarrhea,Contaminated Food on Recent Cruise,Traveler's Diarrhea
-
-Abdominal Pain,Diarrhea,Weight Loss,Irritable Bowel Syndrome,Inflammatory Bowel Disease (IBS)
-
-High Blood Pressure,Headache,Vision Changes,Pregnant,Pre-Eclampsia
-
-Trouble Sleeping,Vomiting,Fatigue,"Missed Period, Sexually Active",Pregnancy
-
-Loss of Taste/Smell,Fever,Cough,Recent Travel to Europe,COVID-19
-
-Muscle Aches,Fever,Chills,Travel to Malaria Prone Area,Malaria
-
-Diarrhea,High Fever,Abdominal Cramps,Contaminated Water Source,Typhoid Fever
-
-Fatigue,Fever,Cough,Recent Surgery,Pneumonia
-
-Headache,Nausea,Light Sensitivity,History of Migraines,Migraine with Aura
-
-Chest Pain,Shortness of Breath,Palpitations,Anxiety Disorder,Anxiety Attack
-
-Fatigue,Night Sweats,Weight Loss,Unexplained for Past 6 Months,Possible Cancer (Further Testing Needed)
-
-Runny Nose,Congestion,Facial Pain,"Recent Cold, Exposure to Dust",Sinusitis
-
-Fever,Vomiting,Diarrhea,"Recent Antibiotic Use, Recent Travel",Travelers Diarrhea with C. Diff Infection
-
-Fatigue,Muscle Aches,Chills,Recent Tick Bite,Babesiosis
-
-Cough,Chest Tightness,Wheezing,"History of Asthma, Recent Exposure to Allergens",Asthma Exacerbation
-
-Fever,Cough,Fatigue,"Recent Cold, Crowded Environment",Influenza A
-
-Fatigue,Fever,Cough,"Recent Food Poisoning, Dehydration",Post Infectious Cough
-
-Cough,Fever,Fatigue,"Recent Cold, Exposure to Cold Weather",Bronchitis
-
-Fatigue,Fever,Cough,Recent Dental Work,Sinusitis
-
-Cough,Fever,Fatigue,"Recent Cold, Exposure to Mold",Allergic Bronchopulmonary Mycosis (ABPA)
-
-Fatigue,Cough,Fever,"Recent Cold, Untreated Allergies",Postnasal Drip Cough
-
-Cough,Fever,Fatigue,"Recent Cold, Exposure to Secondhand Smoke",Cough Variant Asthma
-
-Fatigue,Fever,Cough,"Recent Cold, History of GERD",GERD Cough
-
-Cough,Fever,Fatigue,"Recent Cold, Vocal Strain",Vocal Cord Dysfunction Cough
-
-Fatigue,Fever,Cough,"Recent Cold, Psychological Stress",Psychogenic Cough
-
-Fatigue,Fever,Night Sweats,"Recent Cold, HIV Positive",HIV Infection
-
-Cough,Fever,Fatigue,"Recent Cold, Cystic Fibrosis",Cystic Fibrosis Exacerbation
-
-Blurry Vision,Headache,Nausea,Diabetes,Diabetic Retinopathy
-
-Burning Sensation in Chest,Indigestion,Nausea,Recent Spicy Meal,Heartburn
-
-Chills,Night Sweats,Weight Loss,HIV Risk Factors,HIV/AIDS
-
-Difficulty Concentrating,Memory Problems,Mood Swings,Recent Head Injury,Post Concussion Syndrome
-
-Dry Cough,Itchy Throat,Trouble Sleeping,Allergies,Allergic Rhinitis
-
-Earache,Fever,Headache,Recent Ear Infection,Ear Infection
-
-Fatigue,Joint Pain,Morning Stiffness,Family History of Arthritis,Rheumatoid Arthritis
-
-Frequent Urination,Urgency to Urinate,Pelvic Pain,Recent Urinary Tract Infection,Interstitial Cystitis
-
-Heartburn,Chest Pain,Nausea,History of GERD,Gastroesophageal Reflux Disease (GERD)
-
-Indigestion,Nausea,Vomiting,Overeating,Indigestion
-
-Irregular Heartbeat,Shortness of Breath,Chest Pain,Anxiety,Anxiety Attack
-
-Joint Pain,Stiffness,Swelling,Recent Injury,Sprain or Strain
-
-Loss of Appetite,Nausea,Vomiting,Recent Surgery,Nausea and Vomiting After Surgery
-
-Low Back Pain,Leg Pain,Numbness,Recent Heavy Lifting,Sciatica
-
-Menstrual Cramps,Fatigue,Mood Swings,None,Menstrual Cramps
-
-Nausea,Vomiting,Fever,Pregnancy,Morning Sickness
-
-Night Sweats,Weight Loss,Fatigue,HIV Risk Factors,Night Sweats (HIV/AIDS)
-
-Numbness,Tingling,Weakness,Recent Stroke,Stroke
-
-Painful Urination,Burning Sensation,Blood in Urine,Kidney Stones,Kidney Stones
-
-Rapid Heartbeat,Sweating,Dizziness,Dehydration,Dehydration
-
-Ringing in Ears,Hearing Loss,Dizziness,Exposure to Loud Noise,Tinnitus
-
-Sharp Chest Pain,Shortness of Breath,Cough,Recent Strenuous Activity,Pleurisy
-
-Skin Rash,Itching,Fever,Recent Medication Use,Allergic Reaction to Medication
-
-Sore Throat,Swollen Glands,Fever,Recent Exposure to Someone with Mono,Mononucleosis
-
-Stomach Ache,Diarrhea,Nausea,Recent Consumption of Undercooked Food,Foodborne Illness
-
-Sudden Vision Loss,Headache,Nausea,High Blood Pressure,Hypertensive Retinopathy
-
-Swollen Lymph Nodes,Fever,Night Sweats,Recent Cancer Diagnosis,Lymphoma
-
-Urinary Urgency,Burning Urination,Pelvic Pain,Unprotected Sex,Pelvic Inflammatory Disease (PID)
-
-Vaginal Discharge,Itching,Burning Sensation,Recent Antibiotic Use,Vaginal Yeast Infection
-
-Wheezing,Cough,Chest Tightness,Cold Weather,Exercise-Induced Asthma
+fever,cough,fatigue,none,flu
+headache,nausea,dizziness,migraines,migraine
+chest_pain,shortness_of_breath,arm_pain,hypertension,heart_attack
+itchy_eyes,sneezing,runny_nose,allergies,hay_fever
+abdominal_pain,bloating,diarrhea,none,food_poisoning
+sore_throat,fever,body_aches,none,common_cold
+rash,fever,joint_pain,none,measles
+frequent_urination,excessive_thirst,weight_loss,obesity,diabetes
+wheezing,cough,shortness_of_breath,asthma,asthma_attack
+fever,stiff_neck,confusion,none,meningitis
+runny_nose,congestion,facial_pain,sinus_infection,sinusitis
+fever,vomiting,abdominal_cramps,none,gastroenteritis
+fatigue,muscle_aches,loss_of_appetite,depression,depression
+cough,chest_tightness,shortness_of_breath,smoking,chronic_obstructive_pulmonary_disease
+fever,swollen_glands,sore_throat,recent_strep_exposure,strep_throat
+fever,white_spots_on_tonsils,difficulty_swallowing,none,tonsillitis
+burning_urination,urgency_to_urinate,blood_in_urine,sexual_activity,urinary_tract_infection
+fatigue,rash,muscle_aches,recent_tick_bite,lyme_disease
+fever,confusion,seizure,head_injury,concussion
+nausea,vomiting,diarrhea,travel_history,traveler's_diarrhea
+abdominal_pain,diarrhea,weight_loss,family_history_of_IBS,inflammatory_bowel_disease
+high_blood_pressure,headache,vision_changes,pregnant,pre_eclampsia
+nausea,vomiting,fatigue,missed_period,pregnancy
+loss_of_taste/smell,fever,cough,recent_travel,COVID_19
+muscle_aches,fever,chills,travel_to_malaria_prone_area,malaria
+diarrhea,high_fever,abdominal_cramps,contaminated_water,typhoid_fever
+fever,cough,fatigue,recent_exposure_to_sick_child,common_cold
+headache,nausea,dizziness,history_of_migraines,migraine
+chest pain,shortness of breath,arm pain,high_blood_pressure,heart_attack
+itchy_eyes,sneezing,runny_nose,allergies_to_pollen,hay_fever
+abdominal_pain,bloating,diarrhea,recent_antibiotic_use,gastroenteritis
+sore_throat,fever,body_aches,none,common_cold
+rash,fever,joint_pain,recent_travel_to_Asia,measles
+frequent_urination,excessive_thirst,weight_loss,family_history_of_diabetes,diabetes
+wheezing,cough,shortness_of_breath,history_of_asthma,asthma_attack
+fever,stiff_neck,confusion,none,meningitis
+runny_nose,congestion,facial_pain,recent_sinus_infection,sinusitis
+fever,vomiting,abdominal_cramps,lactose_intolerance,gastroenteritis
+fatigue,muscle_aches,loss_of_appetite,stressful_life_events,depression
+cough,chest_tightness,shortness_of_breath,smoking_for_20_years,chronic_obstructive_pulmonary_disease (COPD)
+fever,swollen_glands,sore_throat,recent_strep_throat_exposure,strep_throat
+fever,white_spots_on_tonsils,difficulty_swallowing,none,tonsillitis
+burning_urination,urgency_to_urinate,blood_in_urine,recent_urinary_tract_infection (UTI),UTI
+fatigue,rash,muscle_aches,recent_camping_trip_in_wooded_area,lyme_disease
+headache,confusion,seizure,head_injury_from_fall,concussion
+nausea,vomiting,diarrhea,contaminated_food_on_recent_cruise,traveler's_diarrhea
+abdominal_pain,diarrhea,weight_loss,irritable_bowel_syndrome,inflammatory_bowel_disease_(IBS)
+high_blood_pressure,headache,vision_changes,pregnant,pre_eclampsia
+trouble_sleeping,vomiting,fatigue,"missed_period , sexually_active",pregnancy
+loss_of_taste/smell,fever,cough,recent_travel_to_Europe,COVID-19
+muscle_aches,fever,chills,travel_to_malaria_prone_area,malaria
+diarrhea,high_fever,abdominal_cramps,contaminated_water_source,typhoid_fever
+fatigue,fever,cough,recent_surgery,pneumonia
+headache,nausea,light_sensitivity,history_of_migraines,migraine_with_aura
+chest_pain,shortness_of_breath,palpitations,anxiety_disorder,anxiety_attack
+fatigue,night_sweats,weight_loss,unexplained_for_past_6_months,possible_cancer (further testing needed)
+runny_nose,congestion,facial_pain,"recent_cold , exposure_to_dust",sinusitis
+fever,vomiting,diarrhea,"recent_antibiotic_use, recent_travel",travelers_diarrhea_with_C. Diff _nfection
+fatigue,muscle_aches,chills,recent_tick_bite,babesiosis
+cough,chest_tightness,wheezing,"history_of_asthma, recent_exposure_to_allergens",asthma_exacerbation
+fever,cough,fatigue,"recent_cold , crowded_environment",influenza_A
+fatigue,fever,cough,"recent_food_poisoning , dehydration",post_infectious_cough
+cough,fever,fatigue,"recent_cold, exposure_to_cold_weather",bronchitis
+fatigue,fever,cough,recent_dental_work,sinusitis
+cough,fever,fatigue,"recent_cold, exposure_to_mold",allergic_bronchopulmonary_mycosis (ABPA)
+fatigue,cough,fever,"recent_cold , untreated_allergies",postnasal_drip_cough
+cough,fever,fatigue,"recent_cold , exposure_to_secondhand_smoke",cough_variant_asthma
+fatigue,fever,cough,"recent_cold , history_of_GERD",GERD_cough
+cough,fever,fatigue,"recent_cold , vocal strain",vocal_cord_dysfunction_cough
+fatigue,fever,cough,"recent_cold , psychological_stress",psychogenic_cough
+fatigue,fever,night_sweats,"recent_cold , HIV_positive",HIV_infection
+cough,fever,fatigue,"recent_cold , cystic_fibrosis",cystic_fibrosis_exacerbation
+blurry_vision,headache,nausea,diabetes,diabetic_retinopathy
+burning_sensation_in_chest,indigestion,nausea,recent_spicy_meal,heartburn
+chills,night_sweats,weight_loss,HIV_risk_factors,HIV/AIDS
+difficulty_concentrating,memory_problems,mood_swings,recent_head_injury,post_concussion_syndrome
+dry_cough,itchy_throat,trouble_sleeping,allergies,allergic_rhinitis
+earache,fever,headache,recent_ear_infection,ear_infection
+fatigue,joint_pain,morning_stiffness,family_history_of_arthritis,rheumatoid_arthritis
+frequent_urination,urgency_to_urinate,pelvic_pain,recent_urinary_tract_infection,interstitial_cystitis
+heartburn,chest_pain,nausea,history_of_GERD,gastroesophageal_reflux_disease (GERD)
+indigestion,nausea,vomiting,overeating,indigestion
+irregular_heartbeat,shortness_of_breath,chest_pain,anxiety,anxiety_attack
+joint_pain,stiffness,swelling,recent_injury,sprain_or_strain
+loss_of_appetite,nausea,vomiting,recent_surgery,nausea_and_vomiting_after _urgery
+low_back_pain,leg pain,numbness,recent_heavy_lifting,sciatica
+menstrual_cramps,fatigue,mood_swings,none,menstrual_cramps
+nausea,vomiting,fever,pregnancy,morning_sickness
+night_sweats,weight_loss,fatigue,HIV_risk_factors,night_sweats_(HIV/AIDS)
+numbness,tingling,weakness,recent_stroke,stroke
+painful_urination,burning_sensation,bloo_ in_urine,kidney_stones,kidney_stones
+rapid_heartbeat,sweating,dizziness,dehydration,dehydration
+ringing_in_ears,hearing_loss,dizziness,exposure_to_loud_noise,tinnitus
+sharp_chest_pain,shortness_of_breath,cough,recent_strenuous_activity,pleurisy
+skin_rash,itching,fever,recent_medication_use,allergic_reaction_to_medication
+sore_throat,swollen_glands,fever,recent_exposure_to_someone_with_mono,mononucleosis
+blurry_vision,headache,nausea,diabetes,diabetic_retinopathy
+burning_sensation_in_chest,indigestion,nausea,recent_spicy_meal,heartburn
+chills,night_sweats,weight_loss,HIV_risk_factors,HIV/AIDS
+difficulty_concentrating,memory_problems,mood_swings,recent-head_injury,post_concussion_syndrome
+dry_cough,itchy_throat,trouble_sleeping,allergies,allergic_rhinitis
+earache,fever,headache,recent_ear_infection,ear_infection
+fatigue,joint_pain,morning_stiffness,family_history_of_arthritis,rheumatoid_arthritis
+frequent_urination,urgency_to_urinate,pelvic_pain,recent_urinary_tract_infection,interstitial_cystitis
+heartburn,chest_pain,nausea,history_of_GERD,gastroesophageal_reflux_disease_(GERD)
+indigestion,nausea,vomiting,overeating,indigestion
+irregular_heartbeat,shortness_of_breath,chest_pain,anxiety,anxiety_attack
+joint_pain,stiffness,swelling,recent_injury,sprain_or_strain
+loss_of_appetite,nausea,vomiting,recent_surgery,nausea_and_vomiting_after_surgery
+low_back_pain,leg_pain,numbness,recent_heavy_lifting,sciatica
+menstrual_cramps,fatigue,mood_swings,none,menstrual_cramps
+nausea,vomiting,fever,pregnancy,morning_sickness
+night_sweats,weight_loss,fatigue,HIV_risk_factors,night_sweats_(HIV/AIDS)
+numbness,tingling,weakness,recent_stroke,stroke
+painful_urination,burning_sensation,blood_in_urine,kidney_stones,kidney_stones
+rapid_heartbeat,sweating,dizziness,dehydration,dehydration
+ringing_in_ears,hearing_loss,dizziness,exposure_to_loud_noise,tinnitus
+sharp_chest_pain,shortness_of_breath,cough,recent_strenuous_activity,pleurisy
+skin_rash,itching,fever,recent_medication_use,allergic_reaction_to_medication
+sore_throat,swollen_glands,fever,recent_exposure_to_someone_with_mono,mononucleosis
+stomach_ache,diarrhea,nausea,recent_consumption_of_undercooked_food,foodborne illness
+sudden_vision_loss,headache,nausea,high_blood_pressure,hypertensive_retinopathy
+swollen_lymph_nodes,fever,night_sweats,recent_cancer_diagnosis,lymphoma
+urinary_urgency,burning_urination,pelvic_pain,unprotected_sex,pelvic_inflammatory_disease_(PID)
+vaginal_discharge,itching,burning_sensation,recent_antibiotic_use,vaginal_yeast_nfection
+wheezing,cough,chest_tightness,cold_weather,exercise_induced_asthma

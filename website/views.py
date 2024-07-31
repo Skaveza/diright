@@ -26,14 +26,12 @@ def doctor_home():
                 request.form.get('symptom3')
             ]
             medical_history = request.form.get('medical_history')
-            
-            normalized_symptoms = [symptom.lower() for symptom in symptoms if symptom]
 
-            if not all(normalized_symptoms) or not medical_history:
+            if not all(symptoms) or not medical_history:
                 flash('All fields are required', 'error')
                 return redirect(url_for('views.doctor_home'))
-            
-            diagnosis = predict_diagnosis(normalized_symptoms, medical_history)
+
+            diagnosis = predict_diagnosis(symptoms, medical_history)
             return render_template('result.html', prediction=diagnosis)
 
         return render_template('doctor_home.html')

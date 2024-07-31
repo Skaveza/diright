@@ -1,38 +1,64 @@
 {% extends "base.html" %}
 
-{% block title %}Doctor Dashboard - DiRight{% endblock %}
+{% block title %}DiRight{% endblock %}
 
 {% block content %}
-<div class="relative flex flex-col min-h-screen bg-[#2d1d10] dark group/design-root overflow-x-hidden" style='font-family: "Be Vietnam Pro", "Noto Sans", sans-serif;'>
-    <div class="px-10 flex flex-1 justify-center py-5">
-        <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-            <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] mb-6">Doctor Dashboard</h1>
-            <form method="POST" action="{{ url_for('views.doctor_home') }}" class="bg-[#2a2420] p-6 rounded-lg shadow-md">
-                <div class="flex flex-col gap-4">
-                    <div>
-                        <label for="symptom1" class="text-white text-sm font-medium mb-2">Symptom 1</label>
-                        <input id="symptom1" name="symptom1" placeholder="Input Symptom 1" class="form-input w-full rounded-xl text-white border border-[#754a29] bg-[#402917] focus:border-[#754a29] h-14 placeholder:text-[#d5a886] p-[15px] text-base" required />
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link rel="stylesheet" as="style" onload="this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Be+Vietnam+Pro%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" />
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+</head>
+<body>
+    <div class="relative flex size-full min-h-screen flex-col bg-[#2d1d10] dark group/design-root overflow-x-hidden" style='font-family: "Be Vietnam Pro", "Noto Sans", sans-serif;'>
+        <div class="layout-container flex h-full grow flex-col">
+            <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#57371e] px-10 py-3">
+                <div class="flex items-center gap-4 text-white">
+                    <div class="size-4">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor"></path>
+                        </svg>
                     </div>
-                    <div>
-                        <label for="symptom2" class="text-white text-sm font-medium mb-2">Symptom 2</label>
-                        <input id="symptom2" name="symptom2" placeholder="Input Symptom 2" class="form-input w-full rounded-xl text-white border border-[#754a29] bg-[#402917] focus:border-[#754a29] h-14 placeholder:text-[#d5a886] p-[15px] text-base" />
-                    </div>
-                    <div>
-                        <label for="symptom3" class="text-white text-sm font-medium mb-2">Symptom 3</label>
-                        <input id="symptom3" name="symptom3" placeholder="Input Symptom 3" class="form-input w-full rounded-xl text-white border border-[#754a29] bg-[#402917] focus:border-[#754a29] h-14 placeholder:text-[#d5a886] p-[15px] text-base" />
-                    </div>
-                    <div>
-                        <label for="medical_history" class="text-white text-sm font-medium mb-2">Medical History</label>
-                        <input id="medical_history" name="medical_history" placeholder="Input Medical History" class="form-input w-full rounded-xl text-white border border-[#754a29] bg-[#402917] focus:border-[#754a29] h-14 placeholder:text-[#d5a886] p-[15px] text-base" required />
-                    </div>
-                    <div class="flex justify-center">
-                        <button type="submit" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center rounded-full h-12 px-5 bg-[#e67a28] text-white text-base font-bold transition duration-300 hover:bg-[#d86a1f]">
-                            <span class="truncate">Receive Diagnosis</span>
-                        </button>
-                    </div>
+                    <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">DiRight</h2>
                 </div>
-            </form>
+            </header>
+            <div class="px-40 flex flex-1 justify-center py-5">
+                <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+                    <div class="flex flex-wrap justify-between gap-3 p-4">
+                        <p class="text-white text-4xl font-black leading-tight tracking-[-0.033em] min-w-72">Doctor Dashboard</p>
+                    </div>
+                    <form method="POST" action="{{ url_for('views.doctor_home') }}">
+                        <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+                            <label class="flex flex-col min-w-40 flex-1">
+                                <input name="symptom1" placeholder="Input Symptom 1" class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-white focus:outline-0 focus:ring-0 border border-[#754a29] bg-[#402917] focus:border-[#754a29] h-14 placeholder:text-[#d5a886] p-[15px] text-base font-normal leading-normal" required />
+                            </label>
+                        </div>
+                        <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+                            <label class="flex flex-col min-w-40 flex-1">
+                                <input name="symptom2" placeholder="Input Symptom 2" class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-white focus:outline-0 focus:ring-0 border border-[#754a29] bg-[#402917] focus:border-[#754a29] h-14 placeholder:text-[#d5a886] p-[15px] text-base font-normal leading-normal" />
+                            </label>
+                        </div>
+                        <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+                            <label class="flex flex-col min-w-40 flex-1">
+                                <input name="symptom3" placeholder="Input Symptom 3" class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-white focus:outline-0 focus:ring-0 border border-[#754a29] bg-[#402917] focus:border-[#754a29] h-14 placeholder:text-[#d5a886] p-[15px] text-base font-normal leading-normal" />
+                            </label>
+                        </div>
+                        <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+                            <label class="flex flex-col min-w-40 flex-1">
+                                <input name="medical_history" placeholder="Input Medical History" class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-white focus:outline-0 focus:ring-0 border border-[#754a29] bg-[#402917] focus:border-[#754a29] h-14 placeholder:text-[#d5a886] p-[15px] text-base font-normal leading-normal" required />
+                            </label>
+                        </div>
+                        <div class="flex px-4 py-3">
+                            <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-5 flex-1 bg-[#e67a28] text-white text-base font-bold leading-normal tracking-[0.015em]">
+                                <span class="truncate">Receive Diagnosis</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+</body>
+</html>
 {% endblock %}
