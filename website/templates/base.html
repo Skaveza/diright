@@ -64,7 +64,7 @@
                 <nav class="hidden md:flex items-center space-x-6">
                     <a href="{{ url_for('views.home') }}" class="text-sm font-medium hover:text-primary transition">Home</a>
                     {% if request.path == url_for('views.home') %}
-                    <li><a href="{{ url_for('views.about') }}">About</a></li>
+                    <a href="#about" class="text-sm font-medium hover:text-primary transition">About</a>
                     {% endif %}                    
                     <a href="https://www.linkedin.com/in/sifa-mwachoni/" target="_blank" class="text-sm font-medium hover:text-primary transition">Contact us</a>
                     {% if current_user.is_authenticated %}
