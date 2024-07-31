@@ -1,113 +1,68 @@
 {% extends "base.html" %}
 
-{% block title %}Home - Welcome to DiRight- Diagnostics Done Right{% endblock %}
+{% block title %}Home - Welcome to DiRight - Diagnostics Done Right{% endblock %}
 
 {% block content %}
-<form method="POST"></form>
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
-    <link
-      rel="stylesheet"
-      as="style"
-      onload="this.rel='stylesheet'"
-      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Be+Vietnam+Pro%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
-    />
-    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Be Vietnam Pro', 'Noto Sans', sans-serif;
+        }
+        .hero-section {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url("../static/images/Medical Equipment Including Stethoscope Background Wallpaper Image For Free Download - Pngtree.jpeg");
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-[#181411] text-white">
 
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  </head>
-  <body>
-    <div
-      class="relative flex size-full min-h-screen flex-col bg-[#181411] dark group/design-root overflow-x-hidden"
-      style='font-family: "Be Vietnam Pro", "Noto Sans", sans-serif;'
-    >
-      <div class="layout-container flex h-full grow flex-col">
-        <div class="px-40 flex flex-1 justify-center py-5">
-          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-            <div class="@container">
-              <div class="@[480px]:p-4">
-                <div
-                  class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-4"
-                  style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("../static/images/Medical Equipment Including Stethoscope Background Wallpaper Image For Free Download - Pngtree.jpeg");'
-                >
-                  <div class="flex flex-col gap-2 text-center">
-                    <h1
-                      class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
-                    >
-                      Modern diagnostics for African healthcare
-                    </h1>
-                    <h2 class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
-                      In Africa, healthcare can be difficult to access. But with DiRight, doctors can use modern technology to diagnose patients quickly and accurately.
-                    </h2>
-                  </div>
-                  <button
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#e67a28] text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]"
-                  >
-                  <a href="{{ url_for('auth.signup') }}" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#e67a28] text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]">
-                    <span class="truncate">Sign up</span>
-                  </a>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div id="about" class="flex flex-col gap-10 px-4 py-10 @container">
-              <div class="flex flex-col gap-4">
-                <h1
-                  class="text-white tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]"
-                >
-                  Why use DiRight?
-                </h1>
-                <p class="text-white text-base font-normal leading-normal max-w-[720px]">
-                  DiRight combines the latest medical technology with a deep understanding of the unique challenges of healthcare in Africa. Our goal is to make it easier for
-                  doctors to diagnose their patients, so they can provide better care.
-                </p>
-              </div>
-              <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3">
-                <div class="flex flex-col gap-3 pb-3">
-                  <div
-                    class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
-                    style='background-image: url("../static/images/🏥 AI in Radiology_ AI analyzes medical images to….jpeg");'
-                  ></div>
-                  <div>
-                    <p class="text-white text-base font-medium leading-normal">Fast results</p>
-                    <p class="text-[#b8a99d] text-sm font-normal leading-normal">Get test results in just 15 minutes</p>
-                  </div>
-                </div>
-                <div class="flex flex-col gap-3 pb-3">
-                  <div
-                    class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
-                    style='background-image: url("../static/images/Pittsburgh Health Data Alliance looks to machine learning for patient care.jpeg");'
-                  >                
-                </div>
-                  <div>
-                    <p class="text-white text-base font-medium leading-normal">Accurate diagnosis</p>
-                    <p class="text-[#b8a99d] text-sm font-normal leading-normal">Use advanced technology to analyze medical symptoms and patient history and get an accurate diagnosis</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-                <div class="flex flex-col gap-3 pb-3">
-                  <div
-                    class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
-                    style='background-image: url("../static/images/Routine Diagnostic Tests Linked to a 59 Percent Increase in Testicular Cancer Risk _ Clinical And Molecular Dx.jpeg");'
-                  ></div>
-                  <div>
-                    <p class="text-white text-base font-medium leading-normal">Easy to use</p>
-                    <p class="text-[#b8a99d] text-sm font-normal leading-normal">Our site is designed to be simple and easy to use</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-                 
-          </div>
+    <header class="hero-section flex items-center justify-center">
+        <div class="text-center max-w-3xl px-4">
+            <h1 class="text-4xl md:text-5xl font-black mb-4">Modern diagnostics for African healthcare</h1>
+            <p class="text-lg mb-8">In Africa, healthcare can be difficult to access. But with DiRight, doctors can use modern technology to diagnose patients quickly and accurately.</p>
+            <a href="{{ url_for('auth.signup') }}" class="bg-[#e67a28] text-white px-6 py-3 rounded-full text-lg font-bold hover:bg-[#d86d1e]">Sign up</a>
         </div>
-      </div>
-    </div>
-  </body>
+    </header>
+
+    <main class="container mx-auto px-4 py-16">
+        <section id="about" class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Why use DiRight?</h2>
+            <p class="text-lg mb-8 max-w-2xl">DiRight combines the latest medical technology with a deep understanding of the unique challenges of healthcare in Africa. Our goal is to make it easier for doctors to diagnose their patients, so they can provide better care.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-[#2a2420] rounded-lg overflow-hidden">
+                    <img src="../static/images/🏥 AI in Radiology_ AI analyzes medical images to….jpeg" alt="Fast results" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">Fast results</h3>
+                        <p class="text-[#b8a99d]">Get test results in just 15 minutes</p>
+                    </div>
+                </div>
+                <div class="bg-[#2a2420] rounded-lg overflow-hidden">
+                    <img src="../static/images/Pittsburgh Health Data Alliance looks to machine learning for patient care.jpeg" alt="Accurate diagnosis" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">Accurate diagnosis</h3>
+                        <p class="text-[#b8a99d]">Use advanced technology to analyze medical symptoms and patient history and get an accurate diagnosis</p>
+                    </div>
+                </div>
+                <div class="bg-[#2a2420] rounded-lg overflow-hidden">
+                    <img src="../static/images/Routine Diagnostic Tests Linked to a 59 Percent Increase in Testicular Cancer Risk _ Clinical And Molecular Dx.jpeg" alt="Easy to use" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">Easy to use</h3>
+                        <p class="text-[#b8a99d]">Our site is designed to be simple and easy to use</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
 </html>
 {% endblock %}

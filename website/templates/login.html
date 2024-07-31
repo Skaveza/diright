@@ -3,50 +3,40 @@
 {% block title %}Login - DiRight{% endblock %}
 
 {% block content %}
-<div class="relative flex size-full min-h-screen flex-col bg-[#181411] dark group/design-root overflow-x-hidden" style='font-family: "Be Vietnam Pro", "Noto Sans", sans-serif;'>
-  <div class="layout-container flex h-full grow flex-col">
-    <div class="px-40 flex flex-1 justify-center py-5">
-      <div class="layout-content-container flex flex-col w-[512px] max-w-[512px] py-5 max-w-[960px] flex-1">
-        <div class="flex flex-wrap justify-between gap-3 p-4">
-          <p class="text-white tracking-light text-[32px] font-bold leading-tight min-w-72">Log in</p>
+<div class="relative flex min-h-screen bg-[#181411] dark group/design-root overflow-x-hidden" style='font-family: "Be Vietnam Pro", "Noto Sans", sans-serif;'>
+  <div class="flex items-center justify-center w-full">
+    <div class="layout-content-container flex flex-col w-full max-w-md p-6 bg-[#2a2420] rounded-lg shadow-lg">
+      <h1 class="text-white text-3xl font-bold text-center mb-6">Log in</h1>
+      <form method="POST" action="{{ url_for('auth.login') }}">
+        <div class="flex flex-col mb-4">
+          <label class="text-white text-base font-medium pb-2">Email</label>
+          <input
+            name="email"
+            type="email"
+            placeholder="Enter your email"
+            class="form-input w-full h-14 rounded-xl text-white bg-[#382f29] placeholder:text-[#b8a99d] p-4 focus:outline-none focus:ring-0"
+            required
+          />
         </div>
-        <form method="POST" action="{{ url_for('auth.login') }}">
-          <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
-            <label class="flex flex-col min-w-40 flex-1">
-              <p class="text-white text-base font-medium leading-normal pb-2">Email</p>
-              <input
-                name="email"
-                type="email"
-                placeholder="Enter your email"
-                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-white focus:outline-0 focus:ring-0 border-none bg-[#382f29] focus:border-none h-14 placeholder:text-[#b8a99d] p-4 text-base font-normal leading-normal"
-                required
-              />
-            </label>
-          </div>
-          <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
-            <label class="flex flex-col min-w-40 flex-1">
-              <p class="text-white text-base font-medium leading-normal pb-2">Password</p>
-              <input
-                name="password"
-                type="password"
-                placeholder="Enter your password"
-                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-white focus:outline-0 focus:ring-0 border-none bg-[#382f29] focus:border-none h-14 placeholder:text-[#b8a99d] p-4 text-base font-normal leading-normal"
-                required
-              />
-            </label>
-          </div>
-          <div class="flex px-4 py-3">
-            <button type="submit"
-              class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-5 flex-1 bg-[#e67a28] text-white text-base font-bold leading-normal tracking-[0.015em]"
-            >
-              <span class="truncate">Log in</span>
-            </button>
-          </div>
-        </form>
-        <p class="text-[#b8a99d] text-sm font-normal leading-normal pb-3 pt-1 px-4">
-          Don't have an account yet? <a href="{{ url_for('auth.signup') }}" class="text-[#e67a28] underline">Click here to sign up.</a>
-        </p>
-      </div>
+        <div class="flex flex-col mb-6">
+          <label class="text-white text-base font-medium pb-2">Password</label>
+          <input
+            name="password"
+            type="password"
+            placeholder="Enter your password"
+            class="form-input w-full h-14 rounded-xl text-white bg-[#382f29] placeholder:text-[#b8a99d] p-4 focus:outline-none focus:ring-0"
+            required
+          />
+        </div>
+        <button type="submit"
+          class="w-full h-12 rounded-full bg-[#e67a28] text-white text-base font-bold hover:bg-[#d86a1f] transition duration-300"
+        >
+          Log in
+        </button>
+      </form>
+      <p class="text-[#b8a99d] text-sm font-normal text-center pt-3">
+        Don't have an account yet? <a href="{{ url_for('auth.signup') }}" class="text-[#e67a28] underline">Click here to sign up.</a>
+      </p>
     </div>
   </div>
 </div>
