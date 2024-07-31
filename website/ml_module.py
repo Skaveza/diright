@@ -37,13 +37,24 @@ def predict_diagnosis(symptoms, medical_history):
     clf = joblib.load('model.pkl')
     le_dict = joblib.load('label_encoders.pkl')
     
+    # Normalize input data to lowercase
+    symptoms = [str(symptom).lower() for symptom in symptoms]
+    medical_history = str(medical_history).lower()
+    
     # Prepare the input data
     input_data = pd.DataFrame([symptoms + [medical_history]], columns=X.columns)
     
     # Encode the input data
     for column in input_data.columns:
         if column in le_dict:
-            input_data[column] = le_dict[column].transform(input_data[column])
+            try:
+                input_data[column] = le_dict[column].transform(input_data[column])
+            except ValueError as e:
+                if 'y contains previously unseen labels' in str(e):
+                    # Handle unseen labels by assigning a default value
+                    input_data[column] = le_dict[column].transform([le_dict[column].classes_[0]] * len(input_data[column]))
+                else:
+                    raise ValueError(f"Error encoding column {column}: {str(e)}")
         else:
             raise ValueError(f"Column {column} not found in label encoders")
     

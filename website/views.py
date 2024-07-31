@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, flash, redirect, url_for
+from flask import Blueprint, render_template, request, flash, redirect, url_for, get_flashed_messages
 from flask_login import login_required, current_user
 from .models import PatientDocument, User
 from . import db
@@ -20,7 +20,6 @@ def home():
 def doctor_home():
     if current_user.role == 'doctor':
         if request.method == 'POST':
-            # Collect symptoms and medical history from the form
             symptoms = [
                 request.form.get('symptom1'),
                 request.form.get('symptom2'),
@@ -28,17 +27,15 @@ def doctor_home():
             ]
             medical_history = request.form.get('medical_history')
             
-            # Ensure all symptoms and medical history are provided
-            if not all(symptoms) or not medical_history:
+            normalized_symptoms = [symptom.lower() for symptom in symptoms if symptom]
+
+            if not all(normalized_symptoms) or not medical_history:
                 flash('All fields are required', 'error')
                 return redirect(url_for('views.doctor_home'))
             
-            # Perform prediction using the provided symptoms and medical history
-            diagnosis = predict_diagnosis(symptoms, medical_history)
-            
-            # Return the result page with the diagnosis
+            diagnosis = predict_diagnosis(normalized_symptoms, medical_history)
             return render_template('result.html', prediction=diagnosis)
-        
+
         return render_template('doctor_home.html')
     return redirect(url_for('views.home'))
 
@@ -68,21 +65,19 @@ def manage_users():
 @login_required
 def update_user():
     if current_user.role == 'admin':
-        # Iterate through the submitted data
-        for key in request.form.keys():
-            if key.startswith('role_'):
-                email = key.split('_')[1]
-                role = request.form.get(key)
-                
-                user = User.query.filter_by(email=email).first()
-                if user:
-                    user.role = role
-                    db.session.commit()
-                    flash(f'User {user.username} ({user.email}) updated successfully', 'success')
-                else:
-                    flash(f'User with email {email} not found', 'error')
-    
+        email = request.form.get('update_user')
+        role = request.form.get(f'role_{email}')
+        user = User.query.filter_by(email=email).first()
+        if user and email != current_user.email:
+            user.role = role
+            db.session.commit()
+            flash(f'User {user.username} ({user.email}) updated successfully', 'success')
+        elif email == current_user.email:
+            flash('You cannot change your own role', 'error')
+        else:
+            flash(f'User with email {email} not found', 'error')
     return redirect(url_for('views.manage_users'))
+
 
 @views.route('/update_database', methods=['GET', 'POST'])
 @login_required
@@ -93,13 +88,15 @@ def update_database():
             medical_history = request.form.get('medical_history')
             patient = PatientDocument.query.filter_by(patient_id=patient_id).first()
             if patient:
-                patient.medical_history = medical_history
+                patient.document = medical_history
                 db.session.commit()
                 flash('Patient medical history updated successfully', 'success')
             else:
-                new_patient = PatientDocument(patient_id=patient_id, medical_history=medical_history)
+                new_patient = PatientDocument(patient_id=patient_id, document=medical_history)
                 db.session.add(new_patient)
                 db.session.commit()
                 flash('New patient added to database', 'success')
+            return redirect(url_for('views.update_database'))
+        
         return render_template('update_database.html')
     return redirect(url_for('views.home'))

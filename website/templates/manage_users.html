@@ -3,37 +3,43 @@
 {% block title %}Manage Users{% endblock %}
 
 {% block content %}
-<div class="container">
-    <h1 class="text-xl font-bold mb-4">Manage Users</h1>
-    <form method="POST" action="{{ url_for('views.update_user') }}">
-        <table class="min-w-full bg-white border border-gray-300">
-            <thead>
-                <tr>
-                    <th class="py-2 px-4 border-b">Username</th>
-                    <th class="py-2 px-4 border-b">Email</th>
-                    <th class="py-2 px-4 border-b">Role</th>
-                    <th class="py-2 px-4 border-b">Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for user in users %}
-                <tr>
-                    <td class="py-2 px-4 border-b">{{ user.username }}</td>
-                    <td class="py-2 px-4 border-b">{{ user.email }}</td>
-                    <td class="py-2 px-4 border-b">
-                        <select name="role_{{ user.email }}" class="form-select">
-                            <option value="admin" {% if user.role == 'admin' %}selected{% endif %}>Admin</option>
-                            <option value="doctor" {% if user.role == 'doctor' %}selected{% endif %}>Doctor</option>
-                            <option value="patient" {% if user.role == 'patient' %}selected{% endif %}>Patient</option>
-                        </select>
-                    </td>
-                    <td class="py-2 px-4 border-b">
-                        <button type="submit" name="update_user" value="{{ user.email }}" class="btn btn-primary">Update</button>
-                    </td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </form>
+<div class="container mx-auto px-4 py-8 pt-16">
+    <h1 class="text-2xl font-bold mb-6 text-white">Manage Users</h1>
+    <div class="overflow-x-auto">
+        <form method="POST" action="{{ url_for('views.update_user') }}">
+            <table class="min-w-full bg-[#2a2420] border border-gray-600 rounded-lg overflow-hidden">
+                <thead>
+                    <tr class="bg-[#383e42]">
+                        <th class="py-3 px-4 text-left font-medium text-white">Username</th>
+                        <th class="py-3 px-4 text-left font-medium text-white">Email</th>
+                        <th class="py-3 px-4 text-left font-medium text-white">Role</th>
+                        <th class="py-3 px-4 text-left font-medium text-white">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                    <tr class="border-b border-gray-600">
+                        <td class="py-3 px-4 text-white">{{ user.username }}</td>
+                        <td class="py-3 px-4 text-white">{{ user.email }}</td>
+                        <td class="py-3 px-4">
+                            <select name="role_{{ user.email }}" class="form-select bg-[#3a3f43] border border-gray-600 rounded px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-[#e67a28]">
+                                <option value="admin" {% if user.role == 'admin' %}selected{% endif %}>Admin</option>
+                                <option value="doctor" {% if user.role == 'doctor' %}selected{% endif %}>Doctor</option>
+                                <option value="patient" {% if user.role == 'patient' %}selected{% endif %}>Patient</option>
+                            </select>
+                        </td>
+                        <td class="py-3 px-4">
+                            {% if user.email == current_user.email %}
+                            <button type="button" class="bg-gray-500 text-white font-medium py-2 px-4 rounded-full cursor-not-allowed" disabled>Update</button>
+                            {% else %}
+                            <button type="submit" name="update_user" value="{{ user.email }}" class="bg-[#e67a28] hover:bg-[#d86a1f] text-white font-medium py-2 px-4 rounded-full transition duration-300">Update</button>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </form>
+    </div>
 </div>
 {% endblock %}
