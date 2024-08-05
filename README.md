@@ -28,10 +28,10 @@ Render: Platform used for deploying the application.
 # Steps for Deployment
 1. Clone the Repository
 First, clone the repository to your local machine:
-git clone https://github.com/Skaveza/diright.git
+git clone https://github.com/Skaveza/diright.git:
 cd diright
 
-2. Create and Activate a Virtual Environment
+2. Create and Activate a Virtual Environment:
 python -m venv venv
 source venv/bin/activate
 
@@ -41,8 +41,8 @@ pip install -r requirements.txt
 
 4. Configure Environment Variables
 Set up the environment variables needed for the application.
-e.g
-FLASK_APP=app.py
+e.g:
+FLASK_APP=main.py
 FLASK_ENV=development
 SECRET_KEY=your_secret_key
 DATABASE_URL=mysql://username:password@localhost/dbname
@@ -62,7 +62,7 @@ flask db upgrade
 Start the Flask development server:
 flask run or python main.py
 
-9. Deploying to Render
+8. Deploying to Render
 Create a New Web Service:
 
 Go to the Render dashboard and click on "New" and then "Web Service".
@@ -78,12 +78,14 @@ Environment Variables: Add the necessary environment variables (as configured in
 Deploy:
 
 Click on "Create Web Service". Render will start the deployment process.
+
 9. Post-Deployment
 After deploying, ensure that:
 
 The website is accessible via the URL provided by Render.
 All functionalities are working as expected.
 Monitor logs and performance metrics via the Render dashboard.
+
 10. Troubleshooting
 If you encounter issues during deployment, consider the following steps:
 
